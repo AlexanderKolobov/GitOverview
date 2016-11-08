@@ -1,7 +1,7 @@
 package net.kolobov.gitoverview;
 
 
-public class Car extends BaseEntity {
+public class Car extends BaseEntity implements Speakable {
 
     private String name;
 
@@ -30,5 +30,9 @@ public class Car extends BaseEntity {
                 "name='" + name + '\'' +
                 ", speed=" + speed +
                 '}';
+    }
+
+    public String makeNoise() {
+        return "Car make: Br-br-br";
     }
 }

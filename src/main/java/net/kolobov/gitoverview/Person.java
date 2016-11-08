@@ -1,7 +1,7 @@
 package net.kolobov.gitoverview;
 
 
-public class Person extends BaseEntity {
+public class Person extends BaseEntity implements Speakable {
     private String firstName;
     private String lastname;
     private String status;
@@ -39,5 +39,9 @@ public class Person extends BaseEntity {
                 ", lastname='" + lastname + '\'' +
                 ", status='" + status + '\'' +
                 '}';
+    }
+
+    public String makeNoise() {
+        return "Person make: Hello! Glad to see you!";
     }
 }
