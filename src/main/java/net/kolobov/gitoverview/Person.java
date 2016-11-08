@@ -4,6 +4,15 @@ package net.kolobov.gitoverview;
 public class Person extends BaseEntity {
     private String firstName;
     private String lastname;
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getLastname() {
         return lastname;
@@ -28,6 +37,7 @@ public class Person extends BaseEntity {
                 "id=" + super.getId() +
                 ", firstName='" + firstName + '\'' +
                 ", lastname='" + lastname + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
