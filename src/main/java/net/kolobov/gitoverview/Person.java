@@ -1,8 +1,6 @@
 package net.kolobov.gitoverview;
 
-/**
- * @author Alterovych Ilya
- */
+
 public class Person extends BaseEntity {
     private String firstName;
     private String lastname;

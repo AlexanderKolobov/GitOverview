@@ -20,7 +20,11 @@ public class BaseEntity {
                 '}';
     }
 
-    public boolean isNew(){
+    public boolean isNew() {
         return this.id == null;
+    }
+
+    public boolean isOld() {
+        return this.id != null;
     }
 }
