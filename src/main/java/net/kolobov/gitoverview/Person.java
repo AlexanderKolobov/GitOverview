@@ -42,6 +42,6 @@ public class Person extends BaseEntity implements Speakable {
     }
 
     public String makeNoise() {
-        return "Person make: Hello! Glad to see you!";
+        return isOld() ? "Person make: Hello! Glad to see you!" : "Mama!";
     }
 }
