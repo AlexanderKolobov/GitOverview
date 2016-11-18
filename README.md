@@ -10,3 +10,4 @@ git checkout <name>    -> switch to branch <name>
 git branch -D <branchName>    -> delete branch
 git merge <branchName>
 git push origin<nameOfRepository> master<branchName>
+git rebase <branchName>  -> first rebase to master, then rebase master to head
