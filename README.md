@@ -1,12 +1,12 @@
 # GitOverview
 git study project
-executing git commands it comand line
+executing git commands in command line
 git status
 git add <file>
-git add --all
+git add --all          -> add to index files
 git commit -m "Description"
-git branch <name>
-git checkout
-git branch -D <branchName>
+git branch <name>      -> create branch <name>
+git checkout <name>    -> switch to branch <name>
+git branch -D <branchName>    -> delete branch
 git merge <branchName>
 git push origin<nameOfRepository> master<branchName>
