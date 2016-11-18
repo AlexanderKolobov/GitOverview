@@ -1,7 +1,7 @@
 package net.kolobov.gitoverview;
 
 
-public class Person extends BaseEntity implements Speakable {
+public class Person extends BaseEntity implements Speakable, Moveble {
     private String firstName;
     private String lastname;
     private String status;
@@ -43,5 +43,9 @@ public class Person extends BaseEntity implements Speakable {
 
     public String makeNoise() {
         return isOld() ? "Person make: Hello! Glad to see you!" : "Mama!";
+    }
+
+    public String moveWithSpeed() {
+        return isOld() ? "5 m\\h" : "0.2 m\\h";
     }
 }
