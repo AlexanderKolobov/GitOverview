@@ -7,6 +7,20 @@ public class Car extends BaseEntity implements Speakable {
 
     private Integer speed;
 
+    private byte[] image;
+
+    public Car(String name){
+        this.name = name;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
     public String getName() {
         return name;
     }
