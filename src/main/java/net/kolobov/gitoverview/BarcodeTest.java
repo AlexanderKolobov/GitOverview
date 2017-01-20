@@ -14,6 +14,7 @@ import net.sourceforge.barbecue.BarcodeImageHandler;
 import net.sourceforge.barbecue.output.OutputException;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -29,22 +30,16 @@ public class BarcodeTest {
         String prepareId1 = String.valueOf(106061L);
         String prepareId2 = String.valueOf(106062L);
         String prepareId3 = String.valueOf(106063L);
-        String prepareId4 = String.valueOf(987654L);
-        String prepareId5 = String.valueOf(345678L);
 
 //        createBarcodeImage(prepareId1);
 //        createImageCell();
         byte[] barcodeImage1 = createBarcodeImage(prepareId1);
         byte[] barcodeImage2 = createBarcodeImage(prepareId2);
         byte[] barcodeImage3 = createBarcodeImage(prepareId3);
-        byte[] barcodeImage4 = createBarcodeImage(prepareId4);
-        byte[] barcodeImage5 = createBarcodeImage(prepareId5);
 
         insertImageInTemplate(barcodeImage1,
                 barcodeImage2,
-                barcodeImage3,
-                barcodeImage4,
-                barcodeImage5);
+                barcodeImage3);
 
 
     }
@@ -54,11 +49,12 @@ public class BarcodeTest {
         Barcode barcodeLabel = BarcodeFactory.createCode128(prepareId);
         barcodeLabel.setBarWidth(6);
         barcodeLabel.setResolution(1000);
-        barcodeLabel.setBounds(1,1,100,100);
+        Font f=  new Font("Arial", Font.BOLD, 18);
+        barcodeLabel.setFont(f);
+        barcodeLabel.setLabel(prepareId);
+//        File image = new File("128.png");
 
-        File image = new File("128.png");
-
-        BarcodeImageHandler.savePNG(barcodeLabel, image);
+//        BarcodeImageHandler.savePNG(barcodeLabel, image);
 
         //Write barcode to buffer
         BufferedImage bufferedImage = BarcodeImageHandler.getImage(barcodeLabel);
@@ -115,7 +111,7 @@ public class BarcodeTest {
 //        WritableImage writableImage2 = null;
 //        WritableImage writableImage3 = null;
         for (int i = 1; i <= length; i++) {
-            writableImage1 = new WritableImage(0, i * 9 - 1, 4, 1, barcodeImage[i - 1]);
+            writableImage1 = new WritableImage(0, i * 11 - 2, 4, 1, barcodeImage[i - 1]);
 //            writableImage2 = new WritableImage(0, 17, 4, 1, barcodeImage[1]);
 //            writableImage3 = new WritableImage(0, 26, 4, 1, barcodeImage[2]);
             writableSheet.addImage(writableImage1);
